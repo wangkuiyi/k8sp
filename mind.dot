@@ -1,0 +1,12 @@
+digraph {
+	k8s [label="Kubernetes"];
+	pod [label="Pod"];
+	container [label="Container"];
+	pod_ip [label="Pod IP", fillcolor=gray, style=filled];
+	node_ip [label="Node IP", fillcolor=gray, style=filled];
+	flanneld [label="flanneld"];
+	
+	k8s -> pod -> pod_ip -> node_ip;
+	pod -> container;
+	pod_ip -> flanneld;
+}
